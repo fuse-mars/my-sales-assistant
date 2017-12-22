@@ -36,25 +36,42 @@ findRestaurants(
  
  Below, we are going to see how LUIS and Botframework from Microsoft, helps us go from **What users want to do** to **What developers undertand**
 
-**NOTE** that this is just a way of designing a bot, so I am sure it can be used to create bots in other frameworks! 
+**NOTE** that this is just one way of designing a bot, so it can be used to create bots in other frameworks!
+
+## LUIS
+
+LUIS allows the bot to undertand the user's message. It provides this understanding through a few keys concepts defined below.
  
-* Intents
+### Intents
 
-As described above, the bot can with intention of *Finding a restaurant*
+As described at the top, the bot can be used with intention of *Finding a restaurant*
 
-So we have one intent, which is basically the **Task** that our bot can permorm.
+So we have one intent, which is basically the **Task** that our bot can perform.
 
 We call it **findRestaurants** Intent
 
-* Entities
+Example of what the bot will receive, would be something like below, if user says `find me a vegetarian restaurant in Manhattan`
+
+```typescript
+{
+  query: 'find me a vegetarian restaurant in Manhattan',
+  intents: [{
+    intent: 'findRestaurants',
+    score: 0.99999999
+  }]
+}
+```
+
+### Entities
 
 In order to find restaurants, the bot will need to get some information from the user (as our function above requires)
 
-These pieces of information are extracted from the user's message and stored as **Entities**
+These pieces of information are extracted from the user's message and stored as a list of **Entities**
 
 Example would be something like below, if user says `find me a vegetarian restaurant in Manhattan`
 
 ```typescript
+// ... query and intents 
 [{
   entity: 'vegetarian',
   type: 'ServiceOptions',
@@ -70,9 +87,30 @@ Example would be something like below, if user says `find me a vegetarian restau
 }]
 ```
 
-* Utterances
+### Utterances
+
+Since LUIS is a machine, you have to *teach* it how to *understand* and *exract userful information* from the user message.
+
+You (as a developer) teach this machine by providing different messages that you think the user might send, and specifying which *Intent* these messages are bound to
+
+Examples can be similar to below sentences, if user says `find me a vegetarian restaurant in Manhattan`
+
+* **what is the best place to eat vegetarian food**, *Intent is findRestaurants*
+* **restaurants with vegetarian menu** => *Intent is findRestaurants*
+* **vegetarian restaurants** => *Intent is findRestaurants*
+* **Top rated restaurants in Manhattan** => *Intent is findRestaurants*
+
+
+Some technical terms
+* teach = **Train**
+* understand = **Intent Recognition**
+* exract userful information = **Entity Extraction**
 
 find me vegetarian restaurants in Manhattan
+
+## Botframework
+
+
 
 
 ## Implementation
