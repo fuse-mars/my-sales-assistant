@@ -106,11 +106,11 @@ Some technical terms
 * understand = **Intent Recognition**
 * exract userful information = **Entity Extraction**
 
-find me vegetarian restaurants in Manhattan
+At this point, the bot has partial information that allows it to map **What users want to do** to **What developers undertand**
 
 ## Botframework
 
-
+### 
 
 
 ## Implementation
