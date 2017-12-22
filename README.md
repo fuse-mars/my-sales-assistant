@@ -6,7 +6,7 @@
 
 Create a bot that helps people find a good restaurant to eat at.
 
-* What users do or what to do
+* What users want to do
 
 Below is an example of what the user might type when they want the bot to complete the *Main task*
 
@@ -14,7 +14,7 @@ Below is an example of what the user might type when they want the bot to comple
 Hi bot, find me a vegetarian restaurant in Manhattan
 ```
 
-* What developers undertands
+* What developers undertand
 
 We developers prefer requirements expressed in terms of *input* and *output* or simply **What is the user going to do and what is my program going to give them back**
 
@@ -34,8 +34,10 @@ findRestaurants(
  }>
  ```
  
- 
+ Below, we are going to see how LUIS and Botframework from Microsoft, helps us go from **What users want to do** to **What developers undertand**
 
+**NOTE** that this is just a way of designing a bot, so I am sure it can be used to create bots in other frameworks! 
+ 
 * Intents
 
 As described above, the bot can with intention of *Finding a restaurant*
