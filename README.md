@@ -22,7 +22,7 @@ Below is our *Main task* expressed in code
 ```typescript
 findRestaurants(
   location: {latitude: number, longitude: number},
-  pricaRange: {min: number, max: number},
+  priceRange: {min: number, max: number},
   acceptCard: boolean,
   serveVegetarian: boolean
  ) => Array<{
@@ -108,9 +108,35 @@ Some technical terms
 
 At this point, the bot has partial information that allows it to map **What users want to do** to **What developers undertand**
 
+* Location and whether or not the user wants to find a vegetarian restaurant
+```typescript
+  location: {latitude: number, longitude: number}
+  serveVegetarian: boolean
+```
+
+So, the question is, how does the bot collect the rest of information? And this is where the *Botframework* comes in
+
+* The price and whether or not the restaurant accepts debit/credt cards
+```typescript
+  priceRange: {min: number, max: number}
+  acceptCard: boolean
+```
+
 ## Botframework
 
-### 
+Botframework allows the bot to respond to the user's message or ask questions that the user can respond to. It fullfills this responsibility through a few key concepts that are described below.
+
+NOTE: Not all concepts are described here
+
+### Dialog
+how does a dialog help me get the pricerange?
+Dialogs are used flow of con
+
+### Session
+
 
 
 ## Implementation
+
+
+
